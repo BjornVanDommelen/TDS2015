@@ -1,0 +1,14 @@
+To solve:
+
+1. Routing. How? Should fully support SEO (so actual urls not just #/something).
+   For now lets assume MVC app in the backend that outputs the same HTML for each request (you could hardwire a 404 handler for this as well).
+2. Mapping of page to layout? Like what DD4T does with mapping of PT to controller and/or view.
+   Should be from page template metadata defaulting to view=PT name or something useful...
+3. Mapping of component presentation to layout? Like what DD4T does with mapping of CT to controller and/or view.
+   Should be from ct metadata defaulting to view=CT name or something useful...
+4. Firing CPs from page? Should be part of the scope? Use a directive?
+   Assume a <componentpresentation component="tcm:1-2" template="tcm:1-3-32" /> directive?
+5. Linking? How to resolve dynamic component links?
+   Linking.svc on odata should support us here but how to rewrite? Filter?
+6. Binaries? How to allow download access to binaries?
+   Odata webservice can spit out binaries but that gives us "unreadable" urls; maybe fix? Maybe not?

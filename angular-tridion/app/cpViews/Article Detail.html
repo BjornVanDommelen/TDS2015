@@ -1,0 +1,24 @@
+<h4>{{component.Fields.title.Value}}</h4>
+<h5>Image field</h5>
+<img ng-if="component.Fields.image.Value" src="{{component.Fields.image.LinkedComponentValues[0].Multimedia.Url}}" alt="{{component.Fields.image.LinkedComponentValues[0].MetadataFields.alt.Value}}" />
+<h5>Plain text field</h5>
+<p ng-if="component.Fields.intro.Value">{{component.Fields.intro.Value}}</p>
+<h5>Rich text field</h5>
+<div ng-bind-html="component.Fields.body.Value"></div>
+<h5>Explicit binary link</h5>
+<span ng-if="component.Fields.links.Value">
+  <a target="_self" href="{{component.Fields.links.LinkedComponentValues[0].Multimedia.Url}}">{{component.Fields.links.LinkedComponentValues[0].MetadataFields.title.Value}} &gt;&gt;</a>
+</span>
+<h5>Component links</h5>
+<ul ng-if="component.Fields.links.Value">
+  <li ng-repeat="link in component.Fields.links.LinkedComponentValues">
+    <ta-link component="link">
+      <a ng-if="resolvedUrl" href="{{resolvedUrl}}" class="blaatclass" title="blaatjeblaat">{{component.Title}}</a>
+    </ta-link>
+  </li>
+</ul>
+<h5>Explicitly resolved component link from URI</h5>
+<ta-link component-uri="tcm:6-63">
+  <a ng-if="resolvedUrl" href="{{resolvedUrl}}" class="blaatclass" title="blaatjeblaat">Ye explicit link!</a>
+</ta-link>
+

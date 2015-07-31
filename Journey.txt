@@ -1,0 +1,28 @@
+Loosely adapted from https://bardevblog.wordpress.com/2013/07/28/setting-up-angularjs-angular-seed-node-js-and-karma/
+
+1. Download angular-seed from github https://github.com/angular/angular-seed
+2. Extract to a local folder
+3. Install nodejs https://nodejs.org/ use the "install" option. This downloads an MSI. Run it. Install everything.
+4. Verify nodejs works
+Open up a command prompt and type "node". This should give you a "nodejs shell prompt" which looks like this: >
+Type 2+2 and hit enter. The next line should say "4".
+Type CTRL+C twice to exit the nodejs shell.
+5. Install karma
+Use "npm install -g karma"
+6. Install karma plugins
+Use "npm install -g karma-chrome-launcher"
+Use "npm install -g karma-firefox-launcher"
+Use "npm install -g karma-jasmine"
+Use "npm install -g karma-junit-reporter"
+7. Install the angular seed dependencies
+Use "npm install" from the directory where your angular seed application was extracted (G:\Code\TDS2015\angular-seed-master in my case).
+8. Run the unittests
+Use "karma start karma.conf.js"
+this should have executed 5 successful unittests
+
+Note that karma stays active; if you modify any of the javascript files in the project it will automatically retest
+Quit karma by pressing CTRL+C.
+
+9. Start the webserver and browse the sample site
+Use "npm start"; this starts a webserver on port 8000
+Browse to http://localhost:8000/app/
