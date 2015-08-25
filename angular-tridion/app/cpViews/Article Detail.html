@@ -3,22 +3,26 @@
 <img ng-if="component.Fields.image.Value" src="{{component.Fields.image.LinkedComponentValues[0].Multimedia.Url}}" alt="{{component.Fields.image.LinkedComponentValues[0].MetadataFields.alt.Value}}" />
 <h5>Plain text field</h5>
 <p ng-if="component.Fields.intro.Value">{{component.Fields.intro.Value}}</p>
-<h5>Rich text field</h5>
+<h5>Rich text field through sanitizer</h5>
 <div ng-bind-html="component.Fields.body.Value"></div>
+<h5>Rich text field through raw filter</h5>
+<div ng-bind-html="component.Fields.body.Value | raw"></div>
+<h5>Rich text field through directive</h5>
+<div ta-rtf="component.Fields.body.Value"></div>
 <h5>Explicit binary link</h5>
-<span ng-if="component.Fields.links.Value">
-  <a target="_self" href="{{component.Fields.links.LinkedComponentValues[0].Multimedia.Url}}">{{component.Fields.links.LinkedComponentValues[0].MetadataFields.title.Value}} &gt;&gt;</a>
+<span ng-if="component.Fields.links.LinkedComponentValues.length">
+  <a target="_self" href="{{component.Fields.links.LinkedComponentValues[0].Multimedia.Url}}" class="fromfield binary" title="Direct link to multimedia url from a field of a component">{{component.Fields.links.LinkedComponentValues[0].MetadataFields.title.Value}} &gt;&gt;</a>
 </span>
 <h5>Component links</h5>
-<ul ng-if="component.Fields.links.Value">
+<ul ng-if="component.Fields.links.LinkedComponentValues.length">
   <li ng-repeat="link in component.Fields.links.LinkedComponentValues">
     <ta-link component="link">
-      <a ng-if="resolvedUrl" href="{{resolvedUrl}}" class="blaatclass" title="blaatjeblaat">{{component.Title}}</a>
+      <a ng-if="resolvedUrl" href="{{resolvedUrl}}" target="_self" class="fromfield" title="Resolved component link from a field of a component">{{component.Title}}</a>
     </ta-link>
   </li>
 </ul>
 <h5>Explicitly resolved component link from URI</h5>
 <ta-link component-uri="tcm:6-63">
-  <a ng-if="resolvedUrl" href="{{resolvedUrl}}" class="blaatclass" title="blaatjeblaat">Ye explicit link!</a>
+  <a ng-if="resolvedUrl" href="{{resolvedUrl}}" class="fromuri" title="Resolved component link from a tcmuri">Ye explicit link!</a>
 </ta-link>
 

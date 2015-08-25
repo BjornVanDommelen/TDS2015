@@ -4,7 +4,12 @@
   <p>Page ID = {{page.Id}}</p>
   <p>View = {{page.PageTemplate.Title}}</p>
   <h3>Component presentations</h3>
+  <!--
   <div class="cp" ng-repeat="cp in page.ComponentPresentations | filter:{'ComponentTemplate': {'Title': 'Article Detail'} }">
+    <tridion-component-presentation component-presentation="cp" />
+  </div>
+  -->
+  <div class="cp" ng-repeat="cp in page.ComponentPresentations">
     <tridion-component-presentation component-presentation="cp" />
   </div>
   <h3>Dynamic component presentation</h3>
