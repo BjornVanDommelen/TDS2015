@@ -1,0 +1,16 @@
+<h3 class="templateName">Template: Show Date and Number Fields</h3>
+<p class="componentName">Component: {{component.Title}}</p>
+
+<p class="field dateField">
+  Field: date
+  <ul ng-if"component.Fields.date.Values.length">
+    <li ng-repeat="date in component.Fields.date.Values" class="fieldValue">{{date}}</li>
+  </ul>
+</p>
+
+<p class="field numberField">
+  Field: number
+  <ul ng-if"component.Fields.number.Values.length">
+    <li ng-repeat="num in component.Fields.number.Values" class="fieldValue">{{num}}</li>
+  </ul>
+</p>

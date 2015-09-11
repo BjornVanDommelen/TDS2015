@@ -1,0 +1,11 @@
+<h3 class="templateName">Template: Show Download Fields</h3>
+<p class="componentName">Component: {{component.Title}}</p>
+
+<p class="field downloadField">
+  Field: download
+  <ul ng-if"component.Fields.download.Values.length">
+    <li ng-repeat="dl in component.Fields.download.LinkedComponentValues" class="fieldValue">
+      <a target="_self" href="{{dl.Multimedia.Url}}" class="binary" title="{{dl.Title}}">{{dl.MetadataFields.title.Value}}</a>
+    </li>
+  </ul>
+</p>

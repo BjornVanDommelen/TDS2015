@@ -1,0 +1,33 @@
+<h3 class="templateName">Template: Show Embedded Paragraphs</h3>
+<p class="componentName">Component: {{component.Title}}</p>
+
+<div class="field embeddedField">
+  Field: embed
+  <div ng-repeat"paragraph in component.Fields.embed.EmbeddedValues" class="fieldValue">
+    Values: {{component.Fields.embed.EmbeddedValues.length}}
+    <div class="field textField">
+      Field: heading
+      <ul ng-if"paragraph.heading.Values.length">
+        <li ng-repeat="heading in paragraph.heading.Values" class="fieldValue">{{heading}}</li>
+      </ul>
+    </div>
+
+    <div class="field rtfField">
+      Field: body
+      <ul ng-if"paragraph.body.Values.length">
+        <li ng-repeat="body in paragraph.body.Values" class="fieldValue">
+          <span ta-rtf="body"></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="field imgField">
+      Field: image
+      <ul ng-if"paragraph.image.LinkedComponentValues.length">
+        <li ng-repeat="img in paragraph.image.LinkedComponentValues" class="fieldValue">
+          <img src="{{img.Multimedia.Url}}" alt="{{img.MetadataFields.alt.Value}}" />
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
