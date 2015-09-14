@@ -1,0 +1,10 @@
+<div class="large-9 columns">
+  <h4>{{component.Fields.headline.Value}}</h4>
+  <div ta-rtf="component.Fields.intro.Value"></div>
+</div>
+
+<div class="large-3 columns">
+  <ta-link component="component.Fields.button.EmbeddedValues[0].link.LinkedComponentValues[0]">
+    <a ng-if="resolvedUrl" href="{{resolvedUrl}}" class="radius button right">{{$parent.$parent.component.Fields.button.EmbeddedValues[0].text.Value}} →</a>
+  </ta-link>
+</div>

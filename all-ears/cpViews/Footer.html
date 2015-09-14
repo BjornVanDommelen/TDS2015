@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="large-6 columns">
+    <p>© {{component.Fields.copyright.Value}}</p>
+  </div>
+
+  <div class="large-6 columns">
+    <ul class="inline-list right" ng-if="component.Fields.links.EmbeddedValues.length">
+      <li ng-repeat="link in component.Fields.links.EmbeddedValues">
+        <ta-link component="link.link.LinkedComponentValues[0]">
+          <a ng-if="resolvedUrl" href="{{resolvedUrl}}">{{$parent.$parent.link.text.Value}}</a>
+        </ta-link>
+      </li>
+    </ul>
+  </div>
+</div>

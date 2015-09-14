@@ -1,0 +1,33 @@
+<section class="hero" style="background-image: url('{{page.ComponentPresentations[1].Component.Fields.image.LinkedComponentValues[0].Multimedia.Url}}')">
+  <div class="row">
+    <div class="large-12 columns" ng-repeat="cp in page.ComponentPresentations | filter:{'ComponentTemplate': {'Title': 'Header'} }">
+      <tridion-component-presentation component-presentation="cp" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-6 columns about-box" ng-repeat="cp in page.ComponentPresentations | filter:{'ComponentTemplate': {'Title': 'Wide Banner'} }">
+      <tridion-component-presentation component-presentation="cp" />
+    </div>
+  </div>
+</section>
+
+<section class="hero-content">
+  <div class="row" ng-repeat="cp in page.ComponentPresentations | filter:{'ComponentTemplate': {'Title': 'Section'} }">
+    <tridion-component-presentation component-presentation="cp" />
+  </div>
+</section>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="panel">
+      <div class="row" ng-repeat="cp in page.ComponentPresentations | filter:{'ComponentTemplate': {'Title': 'Small Banner'} }">
+        <tridion-component-presentation component-presentation="cp" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer ng-repeat="cp in page.ComponentPresentations | filter:{'ComponentTemplate': {'Title': 'Footer'} }">
+  <tridion-component-presentation component-presentation="cp" />
+</footer>

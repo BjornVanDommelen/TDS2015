@@ -1,0 +1,7 @@
+<div class="black-box">
+  <h2>{{component.Fields.headline.Value}}</h2>
+  <div ta-rtf="component.Fields.intro.Value"></div>
+  <ta-link component="component.Fields.button.EmbeddedValues[0].link.LinkedComponentValues[0]">
+    <a ng-if="resolvedUrl" href="{{resolvedUrl}}" class="secondary small button">{{$parent.$parent.component.Fields.button.EmbeddedValues[0].text.Value}} →</a>
+  </ta-link>
+</div>

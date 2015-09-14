@@ -1,0 +1,17 @@
+<div class="main-wrapper">
+  <h1>{{component.Fields.maintitle.Value}}</h1>
+  <h3>{{component.Fields.subtitle.Value}}</h3>
+  <hr />
+
+  <div class="row">
+    <div class="large-6 columns large-centered">
+      <ul class="button-group even-4" ng-if="component.Fields.links.EmbeddedValues.length">
+        <li ng-repeat="link in component.Fields.links.EmbeddedValues">
+          <ta-link component="link.link.LinkedComponentValues[0]">
+            <a ng-if="resolvedUrl" href="{{resolvedUrl}}" class="button">{{$parent.$parent.link.text.Value}}</a>
+          </ta-link>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
